@@ -163,11 +163,13 @@ export function applyStyle(layer, glStyle, source, path, resolutions) {
     if (glStyle.version != 8) {
       return reject(new Error('glStyle version 8 required.'));
     }
-    if (!(layer instanceof VectorLayer || layer instanceof VectorTileLayer)) {
-      return reject(
-        new Error('Can only apply to VectorLayer or VectorTileLayer')
-      );
-    }
+
+    // Disabled for KOMPAS OL
+    // if (!(layer instanceof VectorLayer || layer instanceof VectorTileLayer)) {
+    //   return reject(
+    //     new Error('Can only apply to VectorLayer or VectorTileLayer')
+    //   );
+    // }
 
     let spriteScale, spriteData, spriteImageUrl, style;
     function onChange() {
